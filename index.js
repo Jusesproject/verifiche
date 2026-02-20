@@ -4,7 +4,7 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-const db = new Database('/data/verifiche.db'); // Questo lo salva sul "disco" di Render
+const db = new Database('verifiche.db'); // Questo lo salva sul "disco" di Render
 
 app.use(express.json());
 app.use(cors());
@@ -27,4 +27,5 @@ app.post('/api/verifiche', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, '0.0.0.0', () => console.log(`Server online sulla porta ${PORT}`));
